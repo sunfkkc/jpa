@@ -6,9 +6,11 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "MEMBER")
 public class Member {
@@ -19,5 +21,7 @@ public class Member {
     private String username;
 
     private Integer age;
+
+
 
 }
