@@ -41,10 +41,10 @@ public class JpaMain {
         System.out.println(findMember);
 
         //목록조회
-        List<Member> members = em.createQuery("select * from Member m", Member.class).getResultList();
+        List<Member> members = em.createQuery("select m from Member m", Member.class).getResultList();
         System.out.println("member size: "+members.size());
 
         //삭제
-        em.remove(member);
+        //em.remove(member);
     }
 }
