@@ -1,0 +1,15 @@
+apply plugin:'java'
+sourceCompatibility = 1.8
+repositories {
+    mavenCentral()
+
+}
+dependencies {
+
+    implementation 'com.h2database:h2'
+    implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '4.3.10.Final'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+
+}
