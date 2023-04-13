@@ -1,8 +1,10 @@
+package jpa;
+
 import java.util.List;
 
 import javax.persistence.*;
 
-import entity.Member;
+import jpa.entity.Member;
 
 public class JpaMain {
     public static void main(String[] args) {
