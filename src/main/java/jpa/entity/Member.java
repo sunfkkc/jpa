@@ -1,6 +1,7 @@
 package jpa.entity;
 import javax.persistence.*;
 
+import com.sun.istack.internal.Nullable;
 import jpa.RoleType;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +18,7 @@ public class Member {
     @Id
     @Column(name = "ID")
     private String id;
-    @Column(name = "NAME")
+    @Column(name = "NAME", nullable = false,length = 10)
     private String username;
 
     private Integer age;
