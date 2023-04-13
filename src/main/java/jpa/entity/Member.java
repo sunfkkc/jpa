@@ -1,7 +1,6 @@
 package jpa.entity;
 import javax.persistence.*;
 
-import com.sun.istack.internal.Nullable;
 import jpa.RoleType;
 import lombok.Getter;
 import lombok.Setter;
