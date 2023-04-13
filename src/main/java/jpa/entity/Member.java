@@ -16,7 +16,7 @@ import java.util.Date;
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     @Column(name = "NAME", nullable = false,length = 10)
     private String username;
 
