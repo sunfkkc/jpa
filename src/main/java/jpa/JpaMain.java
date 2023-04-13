@@ -1,6 +1,5 @@
 package jpa;
 
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -16,7 +15,7 @@ public class JpaMain {
 
         try{
             tx.begin();
-            logic(em);
+            logic();
             tx.commit();
         }catch (Exception e){
             tx.rollback();
@@ -26,15 +25,20 @@ public class JpaMain {
         emf.close();
     }
 
-    private static void logic(EntityManager em){
+    private static void logic(){
+        updateMember();
+    }
 
+    private static void updateMember(){
         Member member = new Member();
         member.setUsername("기찬");
         member.setAge(26);
 
         //등록
         em.persist(member);
-
     }
+
+
+
 
 }
