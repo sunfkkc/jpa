@@ -1,5 +1,6 @@
 package jpa.model.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Member {
     @Id @GeneratedValue
-    private Long id;
+    private Long memberId;
 
     private String name;
     private String city;

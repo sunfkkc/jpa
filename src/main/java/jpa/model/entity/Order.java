@@ -20,12 +20,9 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Order {
     @Id @GeneratedValue
-    @Column(name = "order_id")
-    private Long id;
+    private Long orderId;
 
-    @Column(name = "member_id")
     private Long memberId;
-
 
     private LocalDate orderDate;
     @Enumerated(EnumType.STRING)
