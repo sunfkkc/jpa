@@ -3,6 +3,7 @@
     <persistence-unit name="sample">
         <class>jpa.entity.Member</class>
         <class>jpa.entity.SequenceBoard</class>
+        <class>jpa.entity.TableSequence</class>
 
         <properties>
 
