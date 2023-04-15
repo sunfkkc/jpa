@@ -11,11 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@Entity
 @Table(name = "orders")
+@Getter
+@Entity
 public class Order {
     @Id @GeneratedValue
     @Column(name = "order_id")
