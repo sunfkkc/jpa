@@ -8,13 +8,14 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
+
 @Table(name = "orders")
 @Getter
 @Entity
@@ -22,15 +23,12 @@ public class Order {
     @Id @GeneratedValue
     private Long orderId;
 
-    private Long memberId;
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     private LocalDate orderDate;
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
-    @Builder
-    public Order(Long memberId, LocalDate orderDate, OrderStatus status) {
-        this.memberId = memberId;
-        this.orderDate = orderDate;
-        this.status = status;
-    }
+
 }
