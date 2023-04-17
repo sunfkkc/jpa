@@ -38,6 +38,7 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
+    @Builder
     public Order(Member member, List<OrderItem> orderItem, LocalDate orderDate, OrderStatus status) {
         this.member = member;
         this.orderItem = orderItem;
@@ -45,5 +46,11 @@ public class Order {
         this.status = status;
     }
 
-
+    public void setMember(Member member) {
+        if(this.member != null) {
+            this.member.getOrders().remove(this);
+        }
+        this.member = member;
+        member.getOrders().add(this);
+    }
 }
