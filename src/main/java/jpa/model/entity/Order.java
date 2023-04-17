@@ -16,11 +16,13 @@ import javax.persistence.Table;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 
 @Table(name = "orders")
 @Getter
 @Entity
+@NoArgsConstructor
 public class Order {
     @Id @GeneratedValue
     private Long orderId;
@@ -35,5 +37,13 @@ public class Order {
     private LocalDate orderDate;
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
+
+    public Order(Member member, List<OrderItem> orderItem, LocalDate orderDate, OrderStatus status) {
+        this.member = member;
+        this.orderItem = orderItem;
+        this.orderDate = orderDate;
+        this.status = status;
+    }
+
 
 }
